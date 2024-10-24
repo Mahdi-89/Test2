@@ -1,0 +1,77 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ]
+}, {
+  "@id" : "https://ontology.CapIT.es/logistics/decarbomile/Classification#Motorcycle_Scooter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Motorcycle/Scooter"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://ontology.CapIT.es/logistics/decarbomile/Classification#TransportMeans"
+  } ]
+}, {
+  "@id" : "https://ontology.CapIT.es/logistics/decarbomile/Classification#Train",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Train"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://ontology.CapIT.es/logistics/decarbomile/Classification#TransportMeans"
+  } ]
+}, {
+  "@id" : "https://ontology.CapIT.es/logistics/decarbomile/Classification#TransportMeans",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "These are the vehicles that transport the cargo, such as tricks, vessels, trains, airplanes, barges etc."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "TransportMeans"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://ontology.tno.nl/logistics/federated/DigitalTwin#"
+  } ]
+}, {
+  "@id" : "https://ontology.CapIT.es/logistics/decarbomile/Classification#Truck",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A truck or lorry is a motor vehicle designed to transport cargo. Trucks vary greatly in size, power, and configuration."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Truck"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://ontology.CapIT.es/logistics/decarbomile/Classification#TransportMeans"
+  } ]
+}, {
+  "@id" : "https://ontology.CapIT.es/logistics/decarbomile/Classification#Van",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@value" : "Van"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://ontology.CapIT.es/logistics/decarbomile/Classification#TransportMeans"
+  } ]
+}, {
+  "@id" : "https://ontology.CapIT.es/logistics/decarbomile/Classification#transportMeansMode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "A code specifying the transport means mode."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://ontology.CapIT.es/logistics/decarbomile/Classification#TransportMeans"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Transport Means Mode"
+  }, {
+    "@language" : "iri-based",
+    "@value" : "transportMeansMode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://ontology.tno.nl/logistics/federated/DigitalTwin#",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+} ]
