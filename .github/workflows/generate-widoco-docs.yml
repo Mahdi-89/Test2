@@ -29,7 +29,7 @@ jobs:
       # Step 4: Generate HTML documentation using the Widoco-Conf file
       - name: Generate HTML documentation
         run: |
-          ont_file="TransportationMeans.ttl"  # Replace with your actual ontology filename
+          ont_file="your-ontology-file.ttl"  # Replace with your actual ontology filename
           conf_file="Widoco-Conf"  # Path to your Widoco-Conf file
           output_folder="Website-Ontology"
 
@@ -38,6 +38,9 @@ jobs:
             echo "Widoco-Conf file not found: $conf_file"
             exit 1
           fi
+
+          # Create output folder if it doesn't exist
+          mkdir -p "$output_folder"
 
           # Run Widoco with the conf file
           java -jar widoco.jar -ontFile "$ont_file" -outFolder "$output_folder" \
