@@ -21,8 +21,8 @@ jobs:
 
       - name: Download Widoco (latest release)
         run: |
-          LATEST_URL=$(curl -s https://api.github.com/repos/dgarijo/Widoco/releases/latest | grep "browser_download_url.*jar-with-dependencies.jar" | cut -d '"' -f 4)
-          wget $LATEST_URL -O widoco.jar
+          wget https://github.com/dgarijo/Widoco/releases/download/v1.4.25/widoco-1.4.25-jar-with-dependencies_JDK-17.jar
+          mv widoco-1.4.25-jar-with-dependencies_JDK-17.jar
 
       - name: Generate HTML documentation using Widoco
         run: |
