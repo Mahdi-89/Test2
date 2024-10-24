@@ -1,0 +1,40 @@
+@prefix :         <https://ontology.CapIT.es/logistics/decarbomile/Classification#> .# needs changes
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: 		  <http://www.w3.org/2001/XMLSchema#> .
+
+############################################################################################
+###Adding Transport Modes for Last-Mile Delivery
+:TransportMeans a owl:Class; 
+  rdfs:subClassOf <https://ontology.tno.nl/logistics/federated/DigitalTwin#> ;
+  rdfs:comment "These are the vehicles that transport the cargo, such as tricks, vessels, trains, airplanes, barges etc." ;
+  rdfs:label "TransportMeans"
+.
+#  --------------------------- Class  1------------------------- 
+:Truck a owl:Class ;
+  rdfs:subClassOf :TransportMeans ;   
+  rdfs:comment "A truck or lorry is a motor vehicle designed to transport cargo. Trucks vary greatly in size, power, and configuration." ;
+  rdfs:label "Truck"
+. 
+#  --------------------------- Class  2------------------------- 
+:Train a owl:Class ;
+  rdfs:subClassOf :TransportMeans ;
+  rdfs:label "Train"
+. 
+#  --------------------------- Class  3------------------------- 
+:Van a owl:Class ;
+  rdfs:subClassOf :TransportMeans ; 
+  rdfs:label "Van"
+. 
+#  --------------------------- Class  7------------------------- 
+:Motorcycle_Scooter a owl:Class ;
+  rdfs:subClassOf :TransportMeans ;
+  rdfs:label "Motorcycle/Scooter"
+.  
+#  --------------------------- Property 1------------------------- 
+:transportMeansMode a owl:DatatypeProperty ;
+  rdfs:comment "A code specifying the transport means mode." ;
+  rdfs:label "transportMeansMode"@IRI-based; 
+  rdfs:label "Transport Means Mode"@en; 
+  rdfs:domain :TransportMeans;
+  rdfs:range xsd:string . 

@@ -1,0 +1,31 @@
+- name: Generate HTML documentation for modified ontologies
+run: |
+  changed_files=$(git diff --name-only HEAD^ HEAD | grep '.ttl')
+  if [ -z "$changed_files" ]; then
+    echo "No .ttl files changed. Skipping documentation generation."
+    exit 0
+  fi
+
+  echo "Generating documentation for the following changed files:"
+  echo "$changed_files"
+
+  for ont_file in $changed_files; do
+    ont_name=$(basename "$ont_file" .ttl)
+    category_folder=$(dirname "$ont_file" | sed 's/Ontology\///')
+    output_folder="Website-Ontology/$category_folder/$ont_name"
+    conf_file=$(dirname "$ont_file")/Widoco-Conf
+
+    echo "Generating documentation for: $ont_file"
+    echo "Output folder: $output_folder"
+    echo "Using Widoco-Conf: $conf_file (if it exists)"
+
+    if [ -f "$conf_file" ]; then
+      java -jar widoco.jar -ontFile "$ont_file" -outFolder "$output_folder" -confFile "$conf_file" -rewriteAll -webVowl -oops -includeIndividuals -includeImportedOntologies -htaccess -displayOntologySerializations -uniteSections -createFolder
+    else
+      java -jar widoco.jar -ontFile "$ont_file" -outFolder "$output_folder" -rewriteAll -webVowl -oops -includeIndividuals -includeImportedOntologies -htaccess -displayOntologySerializations -uniteSections -createFolder
+    fi
+
+    # List the contents of the generated folder to verify the files are created
+    echo "Contents of $output_folder:"
+    ls -R "$output_folder"
+  done
