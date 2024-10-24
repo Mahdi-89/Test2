@@ -33,7 +33,7 @@ jobs:
           ls -la docs  # Check the contents of the docs directory to verify Widoco output
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-main@v3
         with:
           github_token: ${{ secrets.GH_PAT3 }}
           publish_dir: ./Widoco-Conf # The folder where Widoco output is stored
