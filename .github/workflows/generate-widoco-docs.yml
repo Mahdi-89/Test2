@@ -26,7 +26,8 @@ jobs:
 
       - name: Generate HTML documentation using Widoco
         run: |
-          java -jar widoco.jar -ontFile TransportationMeans.ttl -outFolder docs
+          java -jar widoco.jar -ontFile TransportationMeans.ttl -outFolder docs\
+          -conf Widoco-Conf.properties || { echo "Widoco failed"; exit 1; }
 
       - name: Check output directory
         run: |
