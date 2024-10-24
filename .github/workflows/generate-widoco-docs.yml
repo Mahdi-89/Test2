@@ -26,7 +26,7 @@ jobs:
 
       - name: Generate HTML documentation using Widoco
         run: |
-          java -jar widoco.jar -ontFile ontology/ontology.owl -outFolder docs
+          java -jar widoco.jar -ontFile Test2/TransportationMeans.ttl -outFolder docs
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
