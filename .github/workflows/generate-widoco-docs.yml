@@ -28,8 +28,12 @@ jobs:
         run: |
           java -jar widoco.jar -ontFile TransportationMeans.ttl -outFolder docs
 
+      - name: Check output directory
+        run: |
+          ls -la docs  # Check the contents of the docs directory to verify Widoco output
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GH_PAT3 }}
-          publish_dir: ./Website-Ontology  # The folder where Widoco output is stored
+          publish_dir: docs  # The folder where Widoco output is stored
